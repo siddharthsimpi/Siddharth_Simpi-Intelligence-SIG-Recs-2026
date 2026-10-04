@@ -1,0 +1,8 @@
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+# optional, only for data download convenience:
+#   datasets   (pip install datasets)  - loads festvox/cmu_hinglish_dog directly from the Hugging Face hub
+#   pyarrow    - needed by pandas to read parquet files
+#   gdown      - downloads the Google Drive translation corpus automatically
+# optional, only for extra test cross-checks: nltk, scikit-learn, pytest
