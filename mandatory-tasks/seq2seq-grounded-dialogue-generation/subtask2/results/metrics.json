@@ -1,0 +1,218 @@
+{
+  "models": [
+    {
+      "model": "no attention",
+      "params": "2,573,168",
+      "best val nll": 3.6814454228197206,
+      "test BLEU": 3.448340045917436,
+      "BLEU-1 prec": 30.6939156111586,
+      "avg len": 12.869,
+      "train s": 1503.1629917621613
+    },
+    {
+      "model": "Bahdanau (additive)",
+      "params": "2,720,880",
+      "best val nll": 3.3936289841976714,
+      "test BLEU": 6.931649117018472,
+      "BLEU-1 prec": 36.87275985663083,
+      "avg len": 13.392,
+      "train s": 1503.4421660900116
+    },
+    {
+      "model": "Luong (general)",
+      "params": "2,687,984",
+      "best val nll": 3.702913978649648,
+      "test BLEU": 4.358037993846703,
+      "BLEU-1 prec": 34.361269324654195,
+      "avg len": 12.29,
+      "train s": 1503.098655462265
+    }
+  ],
+  "by_length": {
+    "no attention": [
+      {
+        "bucket": "1-5",
+        "n": 51,
+        "bleu": 11.428089347155097
+      },
+      {
+        "bucket": "6-10",
+        "n": 315,
+        "bleu": 4.886668014508614
+      },
+      {
+        "bucket": "11-15",
+        "n": 290,
+        "bleu": 3.9359804153527467
+      },
+      {
+        "bucket": "16-20",
+        "n": 243,
+        "bleu": 2.89856415431702
+      },
+      {
+        "bucket": "21+",
+        "n": 101,
+        "bleu": 1.3042619736092138
+      }
+    ],
+    "Bahdanau (additive)": [
+      {
+        "bucket": "1-5",
+        "n": 51,
+        "bleu": 13.573574179226483
+      },
+      {
+        "bucket": "6-10",
+        "n": 315,
+        "bleu": 8.983191638326682
+      },
+      {
+        "bucket": "11-15",
+        "n": 290,
+        "bleu": 6.79659326949179
+      },
+      {
+        "bucket": "16-20",
+        "n": 243,
+        "bleu": 6.09875115765282
+      },
+      {
+        "bucket": "21+",
+        "n": 101,
+        "bleu": 6.048594425875355
+      }
+    ],
+    "Luong (general)": [
+      {
+        "bucket": "1-5",
+        "n": 51,
+        "bleu": 6.949676799097785
+      },
+      {
+        "bucket": "6-10",
+        "n": 315,
+        "bleu": 5.233136279510909
+      },
+      {
+        "bucket": "11-15",
+        "n": 290,
+        "bleu": 4.755107278036492
+      },
+      {
+        "bucket": "16-20",
+        "n": 243,
+        "bleu": 3.7858830994486814
+      },
+      {
+        "bucket": "21+",
+        "n": 101,
+        "bleu": 3.917725823225836
+      }
+    ]
+  },
+  "decoding": [
+    {
+      "strategy": "greedy",
+      "BLEU": 6.931649117018472,
+      "distinct-1": 0.028823178016726403,
+      "distinct-2": 0.16736604260813429,
+      "avg len": 13.392,
+      "repeat rate": 0.0158166559070368,
+      "decode s": 6.319971323013306
+    },
+    {
+      "strategy": "beam 3",
+      "BLEU": 7.800155370438505,
+      "distinct-1": 0.029578797917652628,
+      "distinct-2": 0.17023462921733173,
+      "avg len": 12.678,
+      "repeat rate": 0.016954958040760405,
+      "decode s": 13.5557279586792
+    },
+    {
+      "strategy": "beam 5",
+      "BLEU": 7.81572710520763,
+      "distinct-1": 0.02982427857488312,
+      "distinct-2": 0.16640364720322637,
+      "avg len": 12.406,
+      "repeat rate": 0.01797299666842013,
+      "decode s": 15.31386423110962
+    },
+    {
+      "strategy": "sampling T=0.7",
+      "BLEU": 4.333251024691307,
+      "distinct-1": 0.08222465585412518,
+      "distinct-2": 0.38037416082957476,
+      "avg len": 13.548333333333334,
+      "repeat rate": 0.012032631760033987,
+      "decode s": 9.308303912480673
+    },
+    {
+      "strategy": "sampling T=1.0",
+      "BLEU": 2.2877393782732582,
+      "distinct-1": 0.14459588026069495,
+      "distinct-2": 0.5983588161043182,
+      "avg len": 13.652333333333333,
+      "repeat rate": 0.006979026480888147,
+      "decode s": 8.821609179178873
+    },
+    {
+      "strategy": "top-k 10 (T=1)",
+      "BLEU": 3.5085666197188865,
+      "distinct-1": 0.04938622699013181,
+      "distinct-2": 0.3179846895678668,
+      "avg len": 13.877666666666665,
+      "repeat rate": 0.012791391819050557,
+      "decode s": 9.591509898503622
+    },
+    {
+      "strategy": "top-p 0.9 (T=1)",
+      "BLEU": 3.0677064843279127,
+      "distinct-1": 0.11831083178760803,
+      "distinct-2": 0.5231317565343822,
+      "avg len": 13.679666666666668,
+      "repeat rate": 0.007520739790933764,
+      "decode s": 13.838530540466309
+    }
+  ],
+  "best_attention_model": "Bahdanau (additive)",
+  "stats": {
+    "n_train": 20000,
+    "n_val": 541,
+    "n_test": 1000,
+    "src_vocab": 6000,
+    "tgt_vocab": 6000,
+    "avg_src_len": 13.09065,
+    "avg_tgt_len": 14.14035,
+    "src_oov_test": 0.05332516089488201,
+    "tgt_oov_test": 0.06246466930469192
+  },
+  "config": {
+    "data": null,
+    "data_dir": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask2\\..\\data",
+    "toy": false,
+    "src_lang": "en",
+    "tgt_lang": "fr",
+    "src_col": null,
+    "tgt_col": null,
+    "max_len": 25,
+    "max_vocab": 6000,
+    "min_freq": 2,
+    "max_train": 20000,
+    "max_eval": 1000,
+    "emb_dim": 128,
+    "hid": 128,
+    "dropout": 0.2,
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.002,
+    "patience": 3,
+    "max_seconds": 1500,
+    "seed": 0,
+    "quick": false,
+    "out": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask2\\results",
+    "with_dot": false,
+    "sample_seeds": 3
+  }
+}

@@ -1,0 +1,9 @@
+,count
+FN: neither modality matches (hard),565
+"FP: text matches, images differ",398
+"FN: titles match, images differ (different photos of same product)",311
+FP: text AND image agree (near-identical variant / similar product),132
+FP: fused model over-trusted weak cues,131
+"FN: image matches, titles differ (noisy / disjoint titles)",122
+"FP: image matches, titles differ (visually similar product)",74
+FN: both modalities match but fused model rejected (threshold / calibration),28

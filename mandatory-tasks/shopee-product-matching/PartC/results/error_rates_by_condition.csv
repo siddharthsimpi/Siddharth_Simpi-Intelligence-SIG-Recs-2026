@@ -1,0 +1,11 @@
+condition (true matches),n,missed (FN rate),condition (true non-matches),wrongly matched (FP rate)
+all positives,1243,0.12711182622687048,,
+different aspect ratio (Δ>0.25),0,,,
+different background (Δ white-share>0.3),298,0.31543624161073824,,
+low-contrast / washed-out image,4,0.0,,
+low resolution (<200px),0,,,
+phash far (>=24),753,0.20717131474103587,,
+phash near (<=8),331,0.0,,
+,1257,,all negatives,0.10421638822593476
+,1,,phash near (<=8) – visually same,0.0
+,824,,hard negatives (text/image),0.14684466019417475

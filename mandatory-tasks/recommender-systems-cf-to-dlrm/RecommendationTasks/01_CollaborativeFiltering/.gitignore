@@ -1,0 +1,6 @@
+data/ml-100k/
+data/*.zip
+results/*
+!results/.gitkeep
+__pycache__/
+.pytest_cache/

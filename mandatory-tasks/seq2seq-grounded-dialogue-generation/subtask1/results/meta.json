@@ -1,0 +1,31 @@
+{
+  "fingerprint": {
+    "data": null,
+    "toy": false,
+    "src_lang": "en",
+    "tgt_lang": "hi",
+    "max_len": 25,
+    "max_vocab": 6000,
+    "min_freq": 2,
+    "max_train": 20000,
+    "max_eval": 1000,
+    "seed": 0,
+    "emb_dim": 128,
+    "hid": 128,
+    "dropout": 0.2,
+    "epochs": 10,
+    "lr": 0.002,
+    "batch_size": 32
+  },
+  "stats": {
+    "n_train": 20000,
+    "n_val": 541,
+    "n_test": 1000,
+    "src_vocab": 6000,
+    "tgt_vocab": 6000,
+    "avg_src_len": 13.09065,
+    "avg_tgt_len": 14.14035,
+    "src_oov_test": 0.05332516089488201,
+    "tgt_oov_test": 0.06246466930469192
+  }
+}

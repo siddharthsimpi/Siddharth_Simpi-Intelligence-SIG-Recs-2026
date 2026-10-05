@@ -1,0 +1,38 @@
+{
+  "split_seed": 42,
+  "min_count": 10,
+  "specs": {
+    "logreg": {
+      "type": "logreg",
+      "lr": 0.003
+    },
+    "fm": {
+      "type": "fm",
+      "emb_dim": 4,
+      "lr": 0.0003
+    },
+    "mlp": {
+      "type": "mlp",
+      "emb_dim": 16,
+      "hidden": [
+        128,
+        64
+      ],
+      "dropout": 0.3,
+      "weight_decay": 0.001,
+      "lr": 0.0003
+    },
+    "dcn": {
+      "type": "dcn",
+      "emb_dim": 16,
+      "hidden": [
+        256,
+        128,
+        64
+      ],
+      "n_cross": 4,
+      "dropout": 0.3,
+      "lr": 0.0003
+    }
+  }
+}

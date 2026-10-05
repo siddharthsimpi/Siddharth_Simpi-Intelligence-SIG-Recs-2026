@@ -1,0 +1,131 @@
+case,score,title_i,title_j,kind,numbers_differ,word_overlap
+TP,1.0000001,Purbasari Ultra Smooth Brow Liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0000001,"Apple iPhone 11 Pro 256GB, Midnight Green",Apple iPhone 11 Pro 256GB Midnight Green,positive,False,1.0
+TP,1.0000001,KABEL HDMI/10M SERAT JARING HDMI TO HDMI 10 m 1080P V1.4 3D HQ,KABEL HDMI 10M SERAT JARING HDMI TO HDMI 10 m 1080P V1.4 3D HQ,positive,False,1.0
+TP,1.0000001,Wardah Lightening Night Cream Advanced Niacinamide 30 g,Wardah Lightening Night Cream Advanced Niacinamide 30 g,positive,False,1.0
+TP,1.0000001,GARNIER Micellar Cleansing Water 125ml,Garnier Micellar Cleansing Water 125ml,positive,False,1.0
+TP,1.0000001,Purbasari Ultra Smooth Brow liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0000001,Purbasari Ultra Smooth Brow liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0000001,Indoganic - Beauty Lip & Cheek Crayon Natural Nude,Indoganic Beauty Lip & Cheek Crayon Natural Nude,positive,False,1.0
+TP,1.0000001,Purbasari Ultra Smooth Brow Liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0000001,Purbasari Ultra Smooth Brow Liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0000001,Purbasari Ultra Smooth Brow liner,Purbasari Ultra Smooth Brow Liner,positive,False,1.0
+TP,1.0,Lactogrow 3 750g madu/plain/vanila,LACTOGROW 3 / 4 MADU/VANILA/PLAIN 750g,positive,True,0.8571428571428571
+TP,1.0,THERASKIN FACIAL WASH NORMAL SKIN,THERASKIN FACIAL WASH NORMAL SKIN,positive,False,1.0
+TP,1.0,Real Bubee Pompa ASI Manual Breastpump,Pompa Asi Real Bubee Manual Breastpump,positive,False,1.0
+TP,1.0,LIVIA DRESS (GAMIS CINCIN KOMBINASI),LIVIA DRESS (GAMIS CINCIN KOMBINASI),positive,False,1.0
+TP,1.0,[ Promo Flash Sale ] Mecca Syari S M L XL | Fashion Muslim Gamis Syari Terbaru | Bahan Moscrepe HQ,[ Promo Flash Sale ] Mecca Syari S M L XL | Fashion Muslim Gamis Syari Terbaru | Bahan Moscrepe HQ,positive,False,1.0
+TP,1.0,Lactogrow 3 750g madu/plain/vanila,Lactogrow 3 Vanila / Madu / Plain 750g,positive,False,1.0
+TP,1.0,LIVIA DRESS (GAMIS CINCIN KOMBINASI),LIVIA DRESS (GAMIS CINCIN KOMBINASI),positive,False,1.0
+TP,1.0,LIVIA DRESS (GAMIS CINCIN KOMBINASI),LIVIA DRESS (GAMIS CINCIN KOMBINASI),positive,False,1.0
+TP,1.0,SIMPLE REFRESHING FACIAL WASH 150ML,Simple Refreshing Facial Wash 150ml,positive,False,1.0
+TP,1.0,Beware Bad Dog / Bad Dog Toy 48Tulang / Mainan Running Man,Beware Bad Dog / Bad Dog Toy 48Tulang / Mainan Running Man,positive,False,1.0
+TP,1.0,Saniter Spray Fabric Disinfectan Antibacterial 200ml+30ml,Saniter Spray Fabric Disinfectan Antibacterial 200ml+30ml,positive,False,1.0
+TP,1.0,Cutter Serbaguna Besar - Alat Potong Bahan Kain / Kertas,Cutter Serbaguna Besar - Alat Potong Bahan Kain / Kertas,positive,False,1.0
+TP,1.0,THERASKIN FACIAL WASH NORMAL SKIN,FACIAL WASH NORMAL SKIN THERASKIN,positive,False,1.0
+TP,1.0,FACIAL WASH NORMAL SKIN THERASKIN,FACIAL WASH NORMAL SKIN THERASKIN,positive,False,1.0
+TP,1.0,FACIAL WASH NORMAL SKIN THERASKIN,THERASKIN FACIAL WASH NORMAL SKIN,positive,False,1.0
+TP,1.0,Theraskin Facial Wash Normal Skin,FACIAL WASH NORMAL SKIN THERASKIN,positive,False,1.0
+TP,1.0,Theraskin Facial Wash Normal Skin,THERASKIN FACIAL WASH NORMAL SKIN,positive,False,1.0
+TP,1.0,Theraskin Facial Wash Normal Skin,FACIAL WASH NORMAL SKIN THERASKIN,positive,False,1.0
+TP,1.0,THERASKIN FACIAL WASH NORMAL SKIN,FACIAL WASH NORMAL SKIN THERASKIN,positive,False,1.0
+FP,0.90881664,Tripod Hp 1 Meter 3110 Handphone Camera Kamera Tripot Weifeng Tefeng,Tripod Weifeng Tefeng 3110 HP Camera Kamera Tripot 1 m 1m Meter Free Holder Handphone,text_hard_neg,False,0.7333333333333333
+FP,0.87302816,( READY)SEPATU CONVERSE CLASSIC PENDEK HITAM | MADE IN VIETNAM,( READY )SEPATU CONVERSE PREMIUM PENDEK  | MADE IN VIETNAM,text_hard_neg,False,0.7
+FP,0.8483582,Kobe Mi Bon Cabe Level 15 Mie Goreng Bon Cabe,Mi Bon cabe level 15,text_hard_neg,False,0.625
+FP,0.81523144,Somebymi aha bha pha 30days miracle toner 150ml,SOMEBYMI AHA-BHA-PHA 30DAYS MIRACLE TRAVEL KIT,text_hard_neg,True,0.6
+FP,0.7670413,Bayar Ditempat-KLINSKIN Beauty Soap Original,KLINSKIN BEAUTY SOAP,text_hard_neg,False,0.5
+FP,0.70867604,KLINSKIN BEAUTY SOAP,Klinskin beauty soap. (Jaminan original) bisa COD!,text_hard_neg,False,0.42857142857142855
+FP,0.6970061,Speaker Bluetooth Mini led Portable Wireless Speaker 8639560,SPEAKER BLUETOOTH MINI SPEAKER WIRELESS PORTABLE MINI G2,text_hard_neg,True,0.625
+FP,0.6969346,Grosir Klinskin Beauty Soap,Bayar Ditempat-KLINSKIN Beauty Soap Original,text_hard_neg,False,0.42857142857142855
+FP,0.69376254,Facial Wash MS GLOW/sabun MS GLOW,MS Black - MS GLOW BEAUTY,text_hard_neg,False,0.2857142857142857
+FP,0.6785591,CELANA BASELAYER LEGGING PENDEK 3/4 LEGGING LEGING WANITA PRIA FUTSAL OLAHRAGA GYM FITNESS SENAM,Berkualitas Celana Legging Leging Training Pria Futsal Gym Fitness Kiper Olahraga Murah,text_hard_neg,False,0.4444444444444444
+FP,0.6709738,MORYMONY TAS LUIS BULAT - Tas Ransel Backpack Korea Fashion,MORYMONY DINO -  Tas Ransel Backpack Korea Fashion Lucu,text_hard_neg,False,0.6
+FP,0.6669335,MS Black - MS GLOW BEAUTY,FACIAL WASH MS GLOW / SABUN WAJAH MS GLOW,text_hard_neg,False,0.25
+FP,0.6669335,MS Black - MS GLOW BEAUTY,Sabun wajah ms glow/facial wash ms glow,text_hard_neg,False,0.25
+FP,0.66063094,Home-Klik Quantum Selang Regulator QRL-032,Selang gas paket Quantum QRL 032 + regulator meter SNI,text_hard_neg,False,0.45454545454545453
+FP,0.657217,Ms slim ms glow ms black,*BISA COD* FACIAL WASH MS GLOW/ SABUN MS GLOW,text_hard_neg,False,0.2222222222222222
+FP,0.65030515,MS Black - MS GLOW BEAUTY,*BISA COD* FACIAL WASH MS GLOW/ SABUN MS GLOW,text_hard_neg,False,0.2222222222222222
+FP,0.64390385,Grosir Klinskin Beauty Soap,Klinskin beauty soap. (Jaminan original) bisa COD!,text_hard_neg,False,0.375
+FP,0.63701344,Meja belajar lesehan karakter napolly hellokitty,MEJA BELAJAR GAMBAR Anak lipat karakter lesehan motif lucu lap desk napolly,text_hard_neg,False,0.38461538461538464
+FP,0.6176914,AVAIL MERAH,Pembalut AVAIL NIGHT USE MERAH,text_hard_neg,False,0.4
+FP,0.60176,Masker Kain Masker Tali Masker Hijab,MASKER HIJAB NEW,text_hard_neg,False,0.4
+FP,0.59319246,SOMEBYMI AHA/BHA/PHA 30 Days Miracle Starter Kit 4 pcs/Travel Kit 3 pcs paket / Spme by Mi,SOMEBYMI AHA BHA PHA 30 Days Miracle Toner 150ml Some By Mi Me ORIGINAL,text_hard_neg,True,0.4090909090909091
+FP,0.58873695,Quantum Selang & Regulator QRL032 Silver,SELANG GAS QUANTUM QRL 032 - REGULATOR QUANTUM - SELANG PAKET,text_hard_neg,False,0.3333333333333333
+FP,0.58581513,Chil Kid Gold 800gr (2x400gr) Madu/Vanilla,Chil kid platinum 800gr madu/vanila,text_hard_neg,True,0.4444444444444444
+FP,0.5696989,AVAIL MERAH,Avail pembalut herbal(1pcs)100% asli merah,text_hard_neg,False,0.2857142857142857
+FP,0.5609523,DT.Shop.Medan Pintar Facil Paint Roller / Kuas Cat Tembok Rumah,Pintar Facil Smart Paint Roller Alat Cat Dinding Bangunan Rumah Kantor Toko Tembok Murah Praktis,text_hard_neg,False,0.3684210526315789
+FP,0.5599561,CRRJU Jam Tangan Pria Casual Quartz Analog Anti Air + Tanggal Aktif + Strap Mesh Stainless Steel,WWOORJam tangan pria tanggal aktif Jam tangan anti air quartz analog clock 8875,text_hard_neg,False,0.5
+FP,0.5589663,MASKER HIJAB NEW,Masker kain 3 lapis headloop // masker hijab // masker tali hijab,text_hard_neg,False,0.25
+FP,0.5541718,Masker HIJAB scuba,Masker Kain Masker Tali Masker Hijab,text_hard_neg,False,0.4
+FP,0.55163413,TEMPERED GLASS ANTI SPY PRIVACY IPHONE 6/6s/6+/6s+/7/7+/8/8+/X/XR/XS/XS MAX/11/11 PRO/11 PRO MAX,BTS iPhone 11 Pro Max iPhone 6s 6 7 8 Plus X XS Max XR CASECiTY CASETiFY BT21 Cases Soft Case Cover,text_hard_neg,True,0.44
+FP,0.5486442,BISA BAYAR COD Kuas Cat Tembok Roller Pintar Facil Kuas Cat Rol Cat Tembok Rol Cat Pintar Kuas Rol,DT.Shop.Medan Pintar Facil Paint Roller / Kuas Cat Tembok Rumah,text_hard_neg,False,0.4
+FP,0.5436675,Tripod Tinggi 1 Meter Model 3110 Bahan Alumunium Action Camera Kamera Weifeng Tripot Wei Feng,Tripod Weifeng Tefeng 3110 HP Camera Kamera Tripot 1 m 1m Meter Free Holder Handphone,text_hard_neg,False,0.36363636363636365
+FP,0.53720534,Chil Kid platinum vanila / madu 800gr,Morinaga Chil Kid Gold 800gr Vanilla,text_hard_neg,False,0.3333333333333333
+FP,0.53720534,Chil kid platinum 800gr madu/vanila,Morinaga Chil Kid Gold 800gr Vanilla,text_hard_neg,False,0.3333333333333333
+FP,0.53484005,Balon pentungan tongkat panjang karakter random,Balon pentungan unicorn,text_hard_neg,False,0.2857142857142857
+FP,0.5313644,CHIL KID GOLD VANILA 800GR,CHIL KID PLATINUM MADU/VANILA 800 GR,text_hard_neg,False,0.3333333333333333
+FP,0.52998126,Speaker Bluetooth Mini led Portable Wireless Speaker 8639560,SPEAKER BLUETOOTH Mini G2 Speaker Termurah,text_hard_neg,True,0.3333333333333333
+FP,0.528677,PENGIKAT GORDEN / TALI GORDEN,PROMO !! / RELL GORDEN / BATANG GORDEN / TIANG GORDEN / FULL SET BATANG GORDENG / GORDEN,text_hard_neg,False,0.1
+FP,0.526065,Sustagen Junior 1+madu 800gr,Nutren Junior 800gr,text_hard_neg,True,0.3333333333333333
+FP,0.5147623,Masker HIJAB scuba,Masker kain 3 lapis headloop // masker hijab // masker tali hijab,text_hard_neg,False,0.25
+FP,0.514616,"REULATOR PAKET + SELANG GAS QUANTUM QRL 032 METER PANJANG 1.8m 1,8 m",Selang Gas Quantum + Regulator Meter Paket. 1.8 meter SNI,text_hard_neg,True,0.4666666666666667
+FP,0.5102273,ORIGINAL Maybelline Superstay Ink Crayon Matte Lipstick Stay,Lipcream Maybelline Super Stay Matte Ink Seri Barcode Satuan,text_hard_neg,False,0.3076923076923077
+FP,0.5096422,Lampu belakang sepeda usb,Powerbeam Lampu Depan Sepeda 5 LED & Lampu Belakang HB-618,text_hard_neg,False,0.3
+FP,0.49684525,MASKER SCUBA & G- MASK NON MEDIS,Masker HIJAB scuba,text_hard_neg,False,0.2857142857142857
+FP,0.49684525,MASKER SCUBA & G- MASK NON MEDIS,masker hijab scuba,text_hard_neg,False,0.2857142857142857
+FP,0.4898759,DC048 Piring Makan Anak Set Karakter Mickey minnie mouse bayi / Piring Kartun Mickey minnie Set,SET SETELAN MICKEY MOUSE,text_hard_neg,False,0.25
+FP,0.48821235,Bedak tabur Marcks Active Beauty Powder Bedak Tabur 20 Gr ORIGINAL,Erha Acne Face Powder 21 gr - Bedak Tabur Kulit Jerawat,text_hard_neg,True,0.26666666666666666
+FP,0.47800034,MI BONCABE KOBE LEVEL 15 RASA MIE GORENG 105 GR,Mi Boncabe Level 15 / Mi Boncabe Murah / Mi Boncabe Grosir (READY STOCK) SIAP KIRIM READY STOCK !!,text_hard_neg,True,0.25
+FP,0.47765404,TWS INPODS 12 MACARON HEADSET BLUETOOTH WIRELESS EARPHONE i12 Bluetooth V5.0,ORIGINAL i11 WIRELESS BLUETOOTH 5.0 STEREO TWS EARPHONE HEADSET FINGER TOUCH AIRPODS 2 4.2 I7S i12,text_hard_neg,True,0.3333333333333333
+FP,0.47583678,TAS AURORA - Tas Selempang Wanita,LB 466 - TAS JELLY MURAH TAS WANITA IMPORT TAS KONDANGAN WANITA TAS SELEMPANG WANITA TAS PESTA 1212,text_hard_neg,False,0.25
+FP,0.46759075,Mukena lol anak karakter,Mukena Anak Katun,text_hard_neg,False,0.4
+FN,0.0,Karet Jepang TUBE - Ikat Rambut Tabung Import Murah,Souvenir pernikahan sendok garpu tile bonus kartu ucapan terima kasih,positive,False,0.0
+FN,0.0,Karet Jepang Tabung,Souvenir pernikahan sendok garpu tile bonus kartu ucapan terima kasih,positive,False,0.0
+FN,0.0,mk11 promo ! flat shoes / slip on kekinian,R25 Sepatu flatshoes safira,positive,True,0.0
+FN,0.0,"Sale! Premium Block Besar MR. BLOCK isi 106, 136, 176, 236 pcs",Mainan Edukatif Blok Kreatif Dengan Roda Murah,positive,False,0.0
+FN,0.0,SEPATU WANITA SLIP ON VENOM BO 04,SLIPON (SLAVINA) Halilintar,positive,False,0.0
+FN,0.0,\xe2\x9d\xa4 Stok sedia ada \xe2\x9d\xa4 Children Girls Linen Small Square Flower Decoration Exquisite Hasp Chain Bag,babyme Tas Bahu/Selempang Bentuk Persegi Aksen Bunga+Mutiara Bahan Katun untuk Anak Perempuan,positive,False,0.0
+FN,0.0,Jam Tangan Iph*ne karet,Apple Watch Touch Rubber,positive,False,0.0
+FN,0.0,Tas Selempang Waistbag Keren Murah COD,MLP Black Original,positive,False,0.0
+FN,0.0,Mmc memory card 64 GB,SanDisk Ultra MicroSD UHS-1 A1 32GB Up To 98MB/s class 10 - Microsd 32GB 98mbps class 10,positive,True,0.0
+FN,0.0,GST 8600 - 115rb,COD(bayar di tempat) G-SHock anti air paling keren dan tren,positive,False,0.0
+FN,0.0,GST 8600 - 115rb,CL BL 01 70cm,positive,True,0.0
+FN,0.0,Free BOX + Batrai Cadangan [Hitam] JAM TANG TANGAN G-SHOCK 8600 ANTI AIR,CL BL 01 70cm,positive,True,0.0
+FN,0.0,GST 8600 - 115rb,JAM TANGAN IRON WATCH,positive,False,0.0
+FN,0.0,"READY STOK..!!! Obat Bikin GAIRAH Pulas Lama, asli perangsang perempuan-wanita-cewek 100% Original .",NATURAWORLD BEUTY SPRAY/NBS SERUM/SETTING SPRAY,positive,False,0.0
+FN,0.0,"READY STOK..!!! Obat Bikin GAIRAH Pulas Lama, asli perangsang perempuan-wanita-cewek 100% Original .",NATURA BEAUTY SPRAY FORMULA KECANTIKAN 1 botol,positive,True,0.0
+FN,0.0,"Mamy Poko Extra Dry S38, M32, L30 dan XL26","Mamypoko Pants ExtraDry S,M,L,XL,XXL",positive,False,0.0
+FN,0.0,COD(bayar di tempat) G-SHock anti air paling keren dan tren,JAM TANGAN IRON WATCH,positive,False,0.0
+FN,0.0,4 sachet Royale parfum series 500 renceng,Sticker GLOW IN THE DARK / Wallpaper Dinding Stiker Glow in the Dark Bulan Bintang Star,positive,False,0.0
+FN,0.0,CL BL 01 70cm,FREE BOX & BATERAI JAM TANGAN PRIA GSHOCK GST-8600 CASIO G SHOCK GST8600 METAL RUBBER ANTI AIR,positive,True,0.0
+FN,0.0,CL BL 01 70cm,Jam Tangan pria casio G-shock 8600 Metal GST-8600,positive,True,0.0
+FN,0.0,CL BL 01 70cm,JAM TANGAN IRON WATCH,positive,False,0.0
+FN,0.0,CL BL 01 70cm,COD(bayar di tempat) G-SHock anti air paling keren dan tren,positive,False,0.0
+FN,0.0,CL BL 01 70cm,FREE BOX & BATERAI JAM TANGAN PRIA GSHOCK GST-8600 CASIO G SHOCK GST8600 METAL RUBBER ANTI AIR,positive,True,0.0
+FN,0.0,CL BL 01 70cm,Jam g shock murah bisa COD,positive,False,0.0
+FN,0.0,JAM TANGAN GST 8600,COD(bayar di tempat) G-SHock anti air paling keren dan tren,positive,False,0.0
+FN,0.0,FREE BOX&BATERAI JAM TANGAN PRIA GSHOCK CASIO G SHOCK GST 8600 FULL BLACK METAL ANTI AIR TERMURAH,CL BL 01 70cm,positive,True,0.0
+FN,0.0,GST 8600 - 115rb,Jam g shock murah bisa COD,positive,False,0.0
+FN,0.0,JAM TANGAN GST 8600,CL BL 01 70cm,positive,True,0.0
+FN,0.0,Hijab simpel pet,BRISA JILBAB KHIMAR MURAH JilbabStyle HIjabMuslimah HIjabStyle JilbabInstan,positive,False,0.0
+FN,0.0,Sidomuncul C1000 perbox,Temulawak Bubuk Pack,positive,False,0.0
+FN,0.0,Vitamin C 1000 Mg Sidomuncul  (Memelihara Daya Tahan Tubuh),Temulawak Bubuk Pack,positive,False,0.0
+FN,0.0,HARGA TERMURAH SHOPEE BIO AQUA ORI  berkwalitas,BIOAQUA BB GOLD LIQUID CUSHION EXQUISITE & DELICATED / BIOAQUA BB CUSHION GOLD LIQUID,positive,False,0.0
+FN,0.0,\xe2\x9d\xa4\xef\xb8\x8f BJO \xe2\x9d\xa4\xef\xb8\x8f BB BIOAQUA CUSHION EXQUISITE & DELICATE FREE REFILL,HARGA TERMURAH SHOPEE BIO AQUA ORI  berkwalitas,positive,False,0.0
+FN,0.0,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",headset stereo u28 macaron / handsfree extra bass,positive,True,0.0
+FN,0.0,HEADPHONE BANDO HANDSFREE EXTRA BASS XB450 -RELAXING,Headset Superbass SONY JBL Stereo Import XB 450 AP + MIC,positive,False,0.0
+FN,0.0,Promo sabuk blackhawk,IKAT PINGGANG TACTICAL MURAH TERLARIS,positive,False,0.0
+FN,0.0,PENGIKAT GORDEN / TALI GORDEN,jepitan hordeng,positive,False,0.0
+FN,0.0,SEPATU SNEAKER ZOOM 03 RUNING TERLARIS,NEW NIKE AIR PRO,positive,False,0.0
+FN,0.0,SEPATU SNEAKER ZOOM 03 RUNNING TERLARIS,NEW NIKE AIR PRO,positive,False,0.0
+FN,0.0,SSEPATU SNEAKER ZOOM 03 RUNNING TERLARIS,NEW NIKE AIR PRO,positive,False,0.0
+FN,0.0,NEW NK AIR PRO,SEPATU SNEAKER ZOOM 03 RUNING TERLARIS,positive,False,0.0
+FN,0.0,NEW NK AIR PRO,SEPATU SNEAKER ZOOM 03 RUNNING TERLARIS,positive,False,0.0
+FN,0.0,Kezia Sweater,Zara Splend ^,positive,False,0.0
+FN,0.0,HEADSET HANDSFREE U19 MACARON MATE COLOR HIFI EXTRA BASS,Earphone Kabel untuk Handphone i9300,positive,True,0.0
+FN,0.0,Handsfree Macaron U-19 Extra Bass - Earphone Stereo,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",positive,True,0.0
+FN,0.0,Headset In-Ear u19 Warna Macaron dengan Kabel 1.2m,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",positive,True,0.0
+FN,0.0,Headset Stereo U19 Macaron Handsfree Extra Bass Earphone U 19,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",positive,True,0.0
+FN,0.0,Earphone Kabel untuk Handphone i9300,headset stereo u28 macaron / handsfree extra bass,positive,True,0.0
+FN,0.0,OSM - 681 Headset Macaron Matte U19 / Earphone Mega Bass Brand Good Quality Extra Bas,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",positive,True,0.0
+FN,0.0,Jual Headset Handsfree Earphone Macaron Tipe U 19 U19 Mega Bass With Microphone,"\xe3\x80\x90One order just buy 1pcs Rp999,Other excess products will not be shipped\xe3\x80\x91Random Color Ready S4 S6 Headphones I9300 Mobile Phone Headphones Wired Earphones Universal",positive,True,0.0

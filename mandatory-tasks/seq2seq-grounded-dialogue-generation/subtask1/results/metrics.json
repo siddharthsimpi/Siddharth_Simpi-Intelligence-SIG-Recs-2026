@@ -1,0 +1,114 @@
+{
+  "test": {
+    "bleu": 2.831675924492765,
+    "precisions": [
+      30.8465913774627,
+      5.659360402443406,
+      1.5988945913936046,
+      0.44852860737337275
+    ],
+    "bp": 0.8465398755514477,
+    "hyp_len": 12131,
+    "ref_len": 14152,
+    "distinct1": 0.013106916165196604,
+    "distinct2": 0.056688527535711075,
+    "avg_len": 12.131,
+    "repetition": 0.015632018686551074,
+    "decode_seconds": 3.898853063583374
+  },
+  "val": {
+    "bleu": 1.9004611326349934,
+    "precisions": [
+      28.227118142836023,
+      4.30660453157641,
+      0.9327701513551566,
+      0.19440124416796267
+    ],
+    "bp": 0.8770819802287326,
+    "hyp_len": 6763,
+    "ref_len": 7650,
+    "distinct1": 0.020848735768150228,
+    "distinct2": 0.07987785278045645,
+    "avg_len": 12.500924214417745,
+    "repetition": 0.026358084217293475,
+    "decode_seconds": 1.969353199005127
+  },
+  "by_length": [
+    {
+      "bucket": "1-5",
+      "n": 51,
+      "bleu": 10.218697476422731
+    },
+    {
+      "bucket": "6-10",
+      "n": 315,
+      "bleu": 4.201953234032102
+    },
+    {
+      "bucket": "11-15",
+      "n": 290,
+      "bleu": 2.682634253995488
+    },
+    {
+      "bucket": "16-20",
+      "n": 243,
+      "bleu": 2.460555594464603
+    },
+    {
+      "bucket": "21+",
+      "n": 101,
+      "bleu": 1.9948237339375376
+    }
+  ],
+  "by_rare_words": [
+    {
+      "group": "all words known",
+      "n": 369,
+      "bleu": 4.475133043445794
+    },
+    {
+      "group": "has <unk> word",
+      "n": 631,
+      "bleu": 1.9770549477437747
+    }
+  ],
+  "stats": {
+    "n_train": 20000,
+    "n_val": 541,
+    "n_test": 1000,
+    "src_vocab": 6000,
+    "tgt_vocab": 6000,
+    "avg_src_len": 13.09065,
+    "avg_tgt_len": 14.14035,
+    "src_oov_test": 0.05332516089488201,
+    "tgt_oov_test": 0.06246466930469192
+  },
+  "n_params": 2573168,
+  "best_val_nll": 3.7124184680038015,
+  "train_seconds": 1503.0272452831268,
+  "config": {
+    "data": null,
+    "data_dir": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask1\\..\\data",
+    "toy": false,
+    "src_lang": "en",
+    "tgt_lang": "hi",
+    "src_col": null,
+    "tgt_col": null,
+    "max_len": 25,
+    "max_vocab": 6000,
+    "min_freq": 2,
+    "max_train": 20000,
+    "max_eval": 1000,
+    "emb_dim": 128,
+    "hid": 128,
+    "dropout": 0.2,
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.002,
+    "patience": 3,
+    "max_seconds": 1500,
+    "seed": 0,
+    "quick": false,
+    "out": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask1\\results"
+  }
+}

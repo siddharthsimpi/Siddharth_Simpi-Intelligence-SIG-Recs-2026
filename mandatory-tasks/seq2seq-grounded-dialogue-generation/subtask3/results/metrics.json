@@ -1,0 +1,243 @@
+{
+  "results": {
+    "Retrieval (TF-IDF reply picker)": {
+      "bleu": 0.228352159382878,
+      "bp": 0.8527312873125158,
+      "bleu1": 6.555124541302308,
+      "bleu2": 1.726488814320746,
+      "rouge1": 6.132510199577269,
+      "rouge2": 0.4411977479661664,
+      "rougeL": 5.737164671411134,
+      "distinct1": 0.21696487740225315,
+      "distinct2": 0.6168888888888889,
+      "avg_len": 9.43125,
+      "repetition": 0.003851851851851852,
+      "grounding_overlap": 0.015702575278498672,
+      "doc_word_hit": 0.05875,
+      "top5_reply_share": 0.035,
+      "empty_rate": 0.00625
+    },
+    "Extractive (best document sentence)": {
+      "bleu": 0.10329759368444115,
+      "bp": 1.0,
+      "bleu1": 3.3734273468823446,
+      "bleu2": 0.7696702573219557,
+      "rouge1": 3.9966816898126036,
+      "rouge2": 0.1949780441268393,
+      "rougeL": 3.765599966802993,
+      "distinct1": 0.08986589243743952,
+      "distinct2": 0.19618030147812088,
+      "avg_len": 18.0825,
+      "repetition": 0.0003658715059271184,
+      "grounding_overlap": 1.0,
+      "doc_word_hit": 0.975,
+      "top5_reply_share": 0.1175,
+      "empty_rate": 0.0
+    },
+    "Seq2seq, history only (ungrounded)": {
+      "bleu": 0.24117262662458555,
+      "bp": 0.46204977388452007,
+      "bleu1": 3.753686372116948,
+      "bleu2": 1.2949726855016477,
+      "rouge1": 5.961070270791515,
+      "rouge2": 0.6440192295274627,
+      "rougeL": 5.834795346843441,
+      "distinct1": 0.0032414910858995136,
+      "distinct2": 0.0036266924564796904,
+      "avg_len": 6.17,
+      "repetition": 0.004352030947775629,
+      "grounding_overlap": 0.0,
+      "doc_word_hit": 0.0,
+      "top5_reply_share": 0.98,
+      "empty_rate": 0.0,
+      "test_nll": 5.224103074744711,
+      "test_ppl": 185.6945416861099
+    },
+    "Seq2seq, history + document (grounded)": {
+      "bleu": 0.20953014562097358,
+      "bp": 0.18916356680505544,
+      "bleu1": 3.6484015169896438,
+      "bleu2": 1.6334931504114203,
+      "rouge1": 10.156345050614192,
+      "rouge2": 1.483036719522153,
+      "rougeL": 9.87544633919684,
+      "distinct1": 0.004570383912248629,
+      "distinct2": 0.0056406124093473006,
+      "avg_len": 4.1025,
+      "repetition": 0.32836422240128926,
+      "grounding_overlap": 0.0,
+      "doc_word_hit": 0.0,
+      "top5_reply_share": 0.995,
+      "empty_rate": 0.0,
+      "test_nll": 5.346114793645015,
+      "test_ppl": 209.7916286608742
+    }
+  },
+  "decoding_extra": {
+    "Seq2seq, history only (ungrounded) + beam 3": {
+      "bleu": 0.12825230692851586,
+      "bp": 0.1766760410437592,
+      "bleu1": 2.098027987394641,
+      "bleu2": 0.7455034172673889,
+      "rouge1": 6.497570075133889,
+      "rouge2": 0.7525521967445742,
+      "rougeL": 6.414687679751492,
+      "distinct1": 0.005625,
+      "distinct2": 0.007083333333333333,
+      "avg_len": 4.0,
+      "repetition": 0.009583333333333333,
+      "grounding_overlap": 0.0,
+      "doc_word_hit": 0.0,
+      "top5_reply_share": 0.9925,
+      "empty_rate": 0.0
+    },
+    "Seq2seq, history + document (grounded) + beam 3": {
+      "bleu": 0.27233024802549666,
+      "bp": 0.17727998344811252,
+      "bleu1": 3.4083792073669574,
+      "bleu2": 1.5037218808298785,
+      "rouge1": 10.013784224236161,
+      "rouge2": 1.5323657476666708,
+      "rougeL": 9.827196007702293,
+      "distinct1": 0.003745318352059925,
+      "distinct2": 0.004575707154742097,
+      "avg_len": 4.005,
+      "repetition": 0.024958402662229616,
+      "grounding_overlap": 0.0,
+      "doc_word_hit": 0.0,
+      "top5_reply_share": 0.9975,
+      "empty_rate": 0.0
+    },
+    "Seq2seq, history + document (grounded) + top-p 0.9, T=0.8": {
+      "bleu": 0.17621564911273016,
+      "bp": 0.42405104393791565,
+      "bleu1": 4.2242977826440615,
+      "bleu2": 1.1327459326386136,
+      "rouge1": 6.630411607706184,
+      "rouge2": 0.42508838740576493,
+      "rougeL": 6.293679916260341,
+      "distinct1": 0.08644859813084112,
+      "distinct2": 0.49590583418628453,
+      "avg_len": 5.885,
+      "repetition": 0.05373592630501536,
+      "grounding_overlap": 0.011499148211243612,
+      "doc_word_hit": 0.01625,
+      "top5_reply_share": 0.01875,
+      "empty_rate": 0.0
+    }
+  },
+  "shuffled_doc": {
+    "bleu": 0.18746302138210677,
+    "bp": 0.18916356680505544,
+    "bleu1": 3.6195831795726634,
+    "bleu2": 1.6014048605778368,
+    "rouge1": 10.034794970792053,
+    "rouge2": 1.409031414482365,
+    "rougeL": 9.737229592708035,
+    "distinct1": 0.004570383912248629,
+    "distinct2": 0.0056406124093473006,
+    "avg_len": 4.1025,
+    "repetition": 0.3295729250604351,
+    "grounding_overlap": 0.0,
+    "doc_word_hit": 0.0,
+    "top5_reply_share": 0.995,
+    "empty_rate": 0.0
+  },
+  "stats": {
+    "train": 14748,
+    "val": 800,
+    "test": 800,
+    "vocab": 4000,
+    "resp_oov_test": 0.11409626157539728
+  },
+  "conv_stats": {
+    "train": {
+      "conversations": 205,
+      "turns": 8060,
+      "avg_turn_tokens": 12.77468982630273,
+      "p95_turn_tokens": 33.0,
+      "english_share_mean": 0.26463939449001445,
+      "buckets": {
+        "mostly English": 683,
+        "mixed": 2178,
+        "mostly Hindi": 5168
+      },
+      "doc_tokens_mean": 844.7853658536585,
+      "devanagari_token_share": 1.942426479157764e-05
+    },
+    "val": {
+      "conversations": 27,
+      "turns": 942,
+      "avg_turn_tokens": 13.523354564755838,
+      "p95_turn_tokens": 32.0,
+      "english_share_mean": 0.2804065983329878,
+      "buckets": {
+        "mostly English": 78,
+        "mixed": 282,
+        "mostly Hindi": 579
+      },
+      "doc_tokens_mean": 851.925925925926,
+      "devanagari_token_share": 0.0003924954863019075
+    },
+    "test": {
+      "conversations": 27,
+      "turns": 960,
+      "avg_turn_tokens": 13.811458333333333,
+      "p95_turn_tokens": 38.0,
+      "english_share_mean": 0.2567528966022455,
+      "buckets": {
+        "mostly English": 78,
+        "mixed": 265,
+        "mostly Hindi": 613
+      },
+      "doc_tokens_mean": 862.4074074074074,
+      "devanagari_token_share": 0.0
+    }
+  },
+  "config": {
+    "data": null,
+    "docs": null,
+    "data_dir": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask3\\..\\data",
+    "out": "C:\\Users\\Hp\\OneDrive\\Desktop\\WEC_Intel\\Siddharth_Simpi-Intelligence-SIG-Recs-2026\\mandatory-tasks\\seq2seq-grounded-dialogue-generation-solution-FINAL\\seq2seq-grounded-dialogue-generation\\subtask3\\results",
+    "toy": false,
+    "quick": false,
+    "attn": "bahdanau",
+    "hist_turns": 3,
+    "max_hist_len": 60,
+    "max_resp_len": 30,
+    "max_doc_len": 100,
+    "max_vocab": 4000,
+    "min_freq": 3,
+    "max_train": 20000,
+    "max_eval": 800,
+    "emb_dim": 100,
+    "hid": 128,
+    "dropout": 0.4,
+    "epochs": 8,
+    "batch_size": 32,
+    "lr": 0.002,
+    "patience": 2,
+    "max_seconds": 900.0,
+    "sgns_epochs": 5,
+    "no_sgns": false,
+    "ablate_emb": false,
+    "beam": 3,
+    "no_repeat_ngram": 3,
+    "min_len": 4,
+    "add_english": true,
+    "seed": 0
+  },
+  "source": "HuggingFace festvox/cmu_hinglish_dog",
+  "hists": {
+    "ungrounded": {
+      "n_params": 1294624,
+      "best_val_loss": 5.318077897459036,
+      "train_seconds": 904.3959817886353
+    },
+    "grounded": {
+      "n_params": 1658016,
+      "best_val_loss": 5.420242610777868,
+      "train_seconds": 944.5859172344208
+    }
+  }
+}

@@ -1,0 +1,3 @@
+__pycache__/
+.pytest_cache/
+RecommendationTasks/01_CollaborativeFiltering/data/ml-100k/

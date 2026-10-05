@@ -1,0 +1,333 @@
+{
+  "dataset": {
+    "n": 9578,
+    "n_train": 5764,
+    "n_val": 1866,
+    "n_test": 1948,
+    "smoke": false
+  },
+  "candidate": {
+    "k": 20,
+    "mods": [
+      "tfidf_char",
+      "sbert",
+      "resnet50",
+      "clip_img"
+    ],
+    "recall_test": 0.9913931516568837,
+    "pairs_test": 116045
+  },
+  "baseline": {
+    "method": "BASELINE: 0.5*text + 0.5*image",
+    "thr": 0.4931594729423523,
+    "val_F1": 0.9086899018262543,
+    "test_F1": 0.9049789856769734,
+    "test_P": 0.932412324690914,
+    "test_R": 0.9220787624999435,
+    "pair_AP": 0.9502821262246048
+  },
+  "singles": [
+    {
+      "method": "cos_tfidf_word",
+      "thr": 0.341772198677063,
+      "val_F1": 0.8481222791789448,
+      "test_F1": 0.8510796741993071,
+      "test_P": 0.9000147693660128,
+      "test_R": 0.8648654352090559,
+      "pair_AP": 0.901770180701897,
+      "modality": "text"
+    },
+    {
+      "method": "cos_tfidf_char",
+      "thr": 0.40193474292755127,
+      "val_F1": 0.8598610113506048,
+      "test_F1": 0.8533603958617504,
+      "test_P": 0.8892011733404191,
+      "test_R": 0.8789793435551508,
+      "pair_AP": 0.9165045575213318,
+      "modality": "text"
+    },
+    {
+      "method": "cos_sbert",
+      "thr": 0.6933850049972534,
+      "val_F1": 0.6771200705607467,
+      "test_F1": 0.6996946801642129,
+      "test_P": 0.839690239249223,
+      "test_R": 0.6860827816052791,
+      "pair_AP": 0.6517002449688443,
+      "modality": "text"
+    },
+    {
+      "method": "cos_resnet50",
+      "thr": 0.7628883123397827,
+      "val_F1": 0.7026779102136936,
+      "test_F1": 0.7075827193350704,
+      "test_P": 0.948451554694383,
+      "test_R": 0.6409140178153686,
+      "pair_AP": 0.6766022853358803,
+      "modality": "image"
+    },
+    {
+      "method": "cos_clip_img",
+      "thr": 0.8033214807510376,
+      "val_F1": 0.6927905180559022,
+      "test_F1": 0.7043982866600086,
+      "test_P": 0.9433558254460935,
+      "test_R": 0.6410750176183566,
+      "pair_AP": 0.6610303059808821,
+      "modality": "image"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "E1",
+      "title": "Weighted score fusion",
+      "hypothesis": "Fusing text+image beats the best single modality and the optimal weight differs from 0.5.",
+      "experiment": "Sweep w in [0,1] on val for s=w*text+(1-w)*image; choose threshold on val.",
+      "result": "w*=0.5; test F1 0.9050 vs baseline 0.9050 vs best single 0.8534",
+      "verdict": "NOT SUPPORTED (no gain)",
+      "analysis": "The weight curve shows how much each modality contributes; a curve that peaks strictly between 0 and 1 means the modalities carry complementary information.",
+      "conclusion": "Hypothesis not supported (no gain)."
+    },
+    {
+      "id": "E1b",
+      "title": "Ensembling within each modality",
+      "hypothesis": "Mean of several encoders per modality beats the single best encoder per modality.",
+      "experiment": "s = w*mean(text cosines)+(1-w)*mean(image cosines); w, thr tuned on val.",
+      "result": "test F1 0.9004 vs E1 0.9050",
+      "verdict": "REJECTED (worse)",
+      "analysis": "Lexical (TF-IDF) and semantic (SBERT) text encoders, and CNN vs CLIP image encoders, err differently; their average is smoother.",
+      "conclusion": "Hypothesis rejected (worse)."
+    },
+    {
+      "id": "E2",
+      "title": "Learned (GBM) fusion on cosine features",
+      "hypothesis": "A non-linear learned combiner beats the best weighted-sum fusion.",
+      "experiment": "HistGradientBoosting on the same 5 cosines, trained on train-split candidate pairs.",
+      "result": "test F1 0.9063 vs linear 0.9050",
+      "verdict": "NOT SUPPORTED (no gain)",
+      "analysis": "A GBM can learn interactions (e.g. both-modalities-agree vs one-modality-only) and per-feature non-linear calibration that a single weight cannot.",
+      "conclusion": "Hypothesis not supported (no gain)."
+    },
+    {
+      "id": "E3",
+      "title": "Side-information features (pHash, numbers, lengths)",
+      "hypothesis": "Variant/duplicate features reduce false positives and improve F1 over cosines only.",
+      "experiment": "GBM with 16 features (cosines + pHash + meta) vs GBM with 5 cosines.",
+      "result": "test F1 0.9105 vs 0.9063",
+      "verdict": "SUPPORTED",
+      "analysis": "Number-token conflicts separate size/model variants; pHash==0 identifies re-used pictures; word-overlap and length ratios flag spammy or truncated titles.",
+      "conclusion": "Hypothesis supported."
+    },
+    {
+      "id": "E4",
+      "title": "Graph post-processing",
+      "hypothesis": "Symmetrising / transitive closure raises recall more than it hurts precision.",
+      "experiment": "none vs symmetric vs connected components on E3 scores; thr tuned on val per variant.",
+      "result": [
+        {
+          "post-processing": "none",
+          "thr(val)": 0.2784,
+          "val_F1": 0.9106,
+          "test_F1": 0.9105,
+          "test_P": 0.9275,
+          "test_R": 0.9314
+        },
+        {
+          "post-processing": "symmetric",
+          "thr(val)": 0.3251,
+          "val_F1": 0.9112,
+          "test_F1": 0.9123,
+          "test_P": 0.9339,
+          "test_R": 0.9277
+        },
+        {
+          "post-processing": "components",
+          "thr(val)": 0.4748,
+          "val_F1": 0.9055,
+          "test_F1": 0.8861,
+          "test_P": 0.8829,
+          "test_R": 0.95
+        }
+      ],
+      "verdict": "NOT SUPPORTED (no gain)",
+      "analysis": "Closure helps products with many listings (recall) but a single false edge can merge two products (precision); the max component size guard limits the damage.",
+      "conclusion": "Best on val: symmetric; hypothesis not supported (no gain)."
+    }
+  ],
+  "ablation": [
+    {
+      "Configuration": "A",
+      "Text": "\u2713",
+      "Image": "\u2717",
+      "pHash": "\u2717",
+      "Meta (nums/len)": "\u2717",
+      "val_F1": 0.861409454921905,
+      "Score (test F1)": 0.8577739059217421,
+      "Precision": 0.9029799889878478,
+      "Recall": 0.8721437888801334,
+      "pair AP": 0.9156020795472525
+    },
+    {
+      "Configuration": "B",
+      "Text": "\u2717",
+      "Image": "\u2713",
+      "pHash": "\u2717",
+      "Meta (nums/len)": "\u2717",
+      "val_F1": 0.7402428027521339,
+      "Score (test F1)": 0.7585161559585801,
+      "Precision": 0.9331540944193994,
+      "Recall": 0.715817750334338,
+      "pair AP": 0.7345483163756292
+    },
+    {
+      "Configuration": "C",
+      "Text": "\u2713",
+      "Image": "\u2713",
+      "pHash": "\u2717",
+      "Meta (nums/len)": "\u2717",
+      "val_F1": 0.9099957693968842,
+      "Score (test F1)": 0.9062605856994277,
+      "Precision": 0.9229277497855609,
+      "Recall": 0.9302600476503535,
+      "pair AP": 0.9593837338124375
+    },
+    {
+      "Configuration": "D",
+      "Text": "\u2713",
+      "Image": "\u2713",
+      "pHash": "\u2713",
+      "Meta (nums/len)": "\u2717",
+      "val_F1": 0.9077383595753336,
+      "Score (test F1)": 0.9103809298742315,
+      "Precision": 0.933706358035084,
+      "Recall": 0.9257583428907931,
+      "pair AP": 0.9595792689923954
+    },
+    {
+      "Configuration": "E",
+      "Text": "\u2713",
+      "Image": "\u2713",
+      "pHash": "\u2717",
+      "Meta (nums/len)": "\u2713",
+      "val_F1": 0.911894632313816,
+      "Score (test F1)": 0.9086754629174305,
+      "Precision": 0.9225184192916976,
+      "Recall": 0.9332527649892627,
+      "pair AP": 0.9596979499979666
+    },
+    {
+      "Configuration": "F (full)",
+      "Text": "\u2713",
+      "Image": "\u2713",
+      "pHash": "\u2713",
+      "Meta (nums/len)": "\u2713",
+      "val_F1": 0.9105699449361633,
+      "Score (test F1)": 0.9105468199520258,
+      "Precision": 0.9274981875761269,
+      "Recall": 0.9314136041028671,
+      "pair AP": 0.9600822942091972
+    },
+    {
+      "Configuration": "G (full \u2212 text)",
+      "Text": "\u2717",
+      "Image": "\u2713",
+      "pHash": "\u2713",
+      "Meta (nums/len)": "\u2713",
+      "val_F1": 0.8918138131207719,
+      "Score (test F1)": 0.9031738079297816,
+      "Precision": 0.9326059162223903,
+      "Recall": 0.9148249367171609,
+      "pair AP": 0.9482115424061666
+    },
+    {
+      "Configuration": "H (full \u2212 image)",
+      "Text": "\u2713",
+      "Image": "\u2717",
+      "pHash": "\u2713",
+      "Meta (nums/len)": "\u2713",
+      "val_F1": 0.8890298947825722,
+      "Score (test F1)": 0.8939763304327087,
+      "Precision": 0.9300927711348657,
+      "Recall": 0.901652211692586,
+      "pair AP": 0.9480007198209688
+    }
+  ],
+  "context": {
+    "partB_best_retr_F1": 0.8507387262855519,
+    "partC_best_retr_F1": 0.7418947467188236
+  },
+  "final": {
+    "scorer": "E3 GBM (all features)",
+    "post": "symmetric",
+    "thr": 0.32511911910671637,
+    "val_F1": 0.911211001852977,
+    "test_F1": 0.9122777989226086,
+    "test_P": 0.9338928009962927,
+    "test_R": 0.927706691386714
+  },
+  "errors": {
+    "counts": {
+      "FN: neither modality matches (hard)": 565,
+      "FP: text matches, images differ": 398,
+      "FN: titles match, images differ (different photos of same product)": 311,
+      "FP: text AND image agree (near-identical variant / similar product)": 132,
+      "FP: fused model over-trusted weak cues": 131,
+      "FN: image matches, titles differ (noisy / disjoint titles)": 122,
+      "FP: image matches, titles differ (visually similar product)": 74,
+      "FN: both modalities match but fused model rejected (threshold / calibration)": 28
+    },
+    "slices": [
+      {
+        "slice": "all true matches",
+        "type": "FN",
+        "n_pairs": 9571,
+        "error_rate": 0.10719882979834917
+      },
+      {
+        "slice": "true matches with a very short title (<=2 words)",
+        "type": "FN",
+        "n_pairs": 113,
+        "error_rate": 0.20353982300884957
+      },
+      {
+        "slice": "true matches with very different images (pHash Ham >= 24)",
+        "type": "FN",
+        "n_pairs": 5721,
+        "error_rate": 0.16885159937073937
+      },
+      {
+        "slice": "true matches with near-identical images (pHash Ham <= 4)",
+        "type": "FN",
+        "n_pairs": 2357,
+        "error_rate": 0.0
+      },
+      {
+        "slice": "true matches whose number tokens conflict",
+        "type": "FN",
+        "n_pairs": 2331,
+        "error_rate": 0.24624624624624625
+      },
+      {
+        "slice": "all true non-matches",
+        "type": "FP",
+        "n_pairs": 106474,
+        "error_rate": 0.006903093713019141
+      },
+      {
+        "slice": "non-matches whose number tokens conflict (variants)",
+        "type": "FP",
+        "n_pairs": 39394,
+        "error_rate": 0.006549220693506625
+      },
+      {
+        "slice": "non-matches with high title word overlap (Jaccard>=0.6)",
+        "type": "FP",
+        "n_pairs": 32,
+        "error_rate": 1.0
+      }
+    ],
+    "missed_by_retrieval": 283,
+    "true_pairs": 9854
+  }
+}
