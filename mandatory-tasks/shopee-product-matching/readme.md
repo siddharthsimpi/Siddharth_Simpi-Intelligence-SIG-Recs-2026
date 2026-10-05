@@ -1,124 +1,70 @@
-# Mandatory Task - Shopee Product Matching
+# Shopee Product Matching — Parts A, B, C and Finale
 
-## Overview
+Code for the mandatory task (dataset exploration → text matching → image matching → multimodal system).
 
-In this task, you will work on the **Shopee Product Matching** problem, where the objective is to identify product listings that correspond to the same underlying product.
+```
+shopee-solution/
+├── README.md, requirements.txt, run_all.sh, run_smoke.sh
+├── shopee_match/          # shared library (data, embeddings+cache, retrieval, metrics, benchmark pairs, plots)
+├── tools/                 # build_notebooks.py, make_synthetic_data.py
+├── PartA/  PartB/  PartC/ # notebook.py/.ipynb + README.md + results/
+└── Finale/                # notebook, src/, results/, README.md, report.pdf (generated)
+```
 
-Real-world e-commerce platforms often contain multiple listings for the same product. These listings may have:
+## 1. Setup
+```bash
+python -m venv .venv && source .venv/bin/activate      # Python 3.10+
+pip install -r requirements.txt
+```
+Download the Kaggle data (needs a Kaggle account / API token) and unzip so that `train.csv` and `train_images/` exist:
+```bash
+pip install kaggle
+kaggle competitions download -c shopee-product-matching -p data
+mkdir -p data/shopee-product-matching && unzip -q data/shopee-product-matching.zip -d data/shopee-product-matching
+# expected: data/shopee-product-matching/train.csv  and  data/shopee-product-matching/train_images/*.jpg
+```
+(Accept the competition rules on kaggle.com first.) Use another location with `export SHOPEE_DATA_DIR=/path/to/shopee-product-matching`.
 
-- Different product titles
-- Different images
-- Noisy or incomplete descriptions
-- Different sellers
-- Different image backgrounds or orientations
+## 2. Verify the pipeline (1–2 min, no GPU, no downloads)
+```bash
+bash run_smoke.sh
+```
+## 3. Real run
+```bash
+# optional fast dev run on 3000 product groups (~9k listings):  export SHOPEE_MAX_GROUPS=3000
+bash run_all.sh                       # builds + executes the 4 notebooks in order, stores outputs in the .ipynb files
+# or run one part:  cd PartB && python notebook.py
+```
+Order matters only loosely: Part C/Finale reuse cached embeddings in `cache/`; Finale additionally reads Parts B/C result CSVs for context if present.
+Rough cost on the full data (34k images): ResNet-50 + CLIP embedding ≈ 10–15 min on a single GPU (≈ 1 h+ on CPU); everything else ≈ 10–20 min.
 
-Your goal is to build a system capable of identifying such matching products.
+## Windows (Command Prompt) equivalents
+```bat
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+set PYTHONUTF8=1
+run_smoke.bat
+:: real data: set SHOPEE_DATA_DIR=C:\data\shopee-product-matching  (keep the 34k images OUTSIDE OneDrive)
+:: quick trial: set SHOPEE_MAX_GROUPS=3000
+run_all.bat
+```
+(PowerShell: activate with `.venv\Scripts\Activate.ps1`, set variables with `$env:NAME="value"`.)
 
-The task is divided into multiple stages. Each stage focuses on a different aspect of the problem and progressively builds towards the final solution.
+## 4. Inference with the final model
+```bash
+python Finale/src/predict.py --csv data/shopee-product-matching/train.csv --images data/shopee-product-matching/train_images --out predictions.csv
+```
 
----
+## Design choices worth knowing (you will be asked about them)
+* **Group-wise split** (60/20/20 by `label_group`) – products never appear in two splits; thresholds/weights/model selection use val only, tables report test.
+* **Two metrics**: pair-level (AUC/AP/F1 on a fixed benchmark with random, text-hard and image-hard negatives) and the Kaggle per-listing F1 over match sets.
+* **Same preprocessing for every vision backbone**: resize whole image to 224×224 (no centre crop).
+* **TF-IDF is fit on all titles** (unsupervised/transductive; no labels used) – listed as a limitation.
+* The benchmark and the retrieval protocol are identical across Parts B, C and Finale, so numbers are directly comparable.
 
+## External resources
+scikit-learn; `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`; OpenAI CLIP ViT-B/32 via HuggingFace `transformers`; torchvision ResNet-50 / EfficientNet-B0; optional faiss; Kaggle "Shopee – Price Match Guarantee" dataset & metric.
 
-
-## Task Structure
-
-The task consists of the following sections:
-
-### Part A - Dataset Exploration
-
-Understand the dataset, identify its characteristics, and analyze the challenges involved in product matching.
-
-### Part B - Text-Based Product Matching
-
-Build a product matching system using textual information such as product titles.
-
-### Part C - Image-Based Product Matching
-
-Build a product matching system using product images.
-
-### Finale - Multimodal Product Matching
-
-Combine the insights from the previous sections and build your final product matching system.
-
----
-
-
-
-## Dataset
-
-You will be working with the **Shopee Product Matching** dataset from Kaggle.
-
-The dataset contains product listings along with information that can be used to determine whether different listings correspond to the same product.
-
-You are expected to understand the dataset yourself before beginning the implementation.
-
----
-
-
-
-## General Guidelines
-
-You are encouraged to explore different approaches and experiment with different techniques.
-
-You may use:
-
-- Research papers
-- Kaggle notebooks
-- GitHub repositories
-- Official documentation
-- Pretrained models
-- Open-source libraries
-
-However, you should have a clear understanding of the techniques and code used in your submission.
-
-You may use existing implementations as references, but simply reproducing an existing solution without understanding or experimentation will not be sufficient.
-
----
-
-
-
-## Submission Guidelines
-
-Each section should contain:
-
-1. Your implementation
-2. Results
-3. Relevant experiments
-4. Observations and conclusions
-
-Clearly mention any external resources, papers, repositories, or implementations that significantly influenced your solution.
-
----
-
-
-
-## Evaluation
-
-The task will be evaluated based on more than just the final metric.
-
-We will consider:
-
-- Understanding of the problem
-- Data analysis
-- Machine learning fundamentals
-- Quality of implementation
-- Experimentation
-- Reasoning behind design decisions
-- Error analysis
-- Ability to explain and defend the solution
-
-Your final implementation will also be discussed during the interview.
-
----
-
-
-
-## Important
-
-There is **no single prescribed approach** for solving this task.
-
-Different approaches may work well for different aspects of the problem. You are encouraged to investigate, experiment, and justify your decisions.
-
-The objective is not merely to obtain a high score, but to understand **why your approach works, where it fails, and how it can be improved**.
-
-Good luck! 
+## Status of this code
+Everything except the neural-model code paths was executed end-to-end on a synthetic dataset (smoke test). The real encoders (ResNet/EfficientNet/CLIP/SBERT) could not be run in the authoring environment (no network/GPU), so **run `run_smoke.sh` first, then the real run, and read each notebook's Observations cells critically.**
