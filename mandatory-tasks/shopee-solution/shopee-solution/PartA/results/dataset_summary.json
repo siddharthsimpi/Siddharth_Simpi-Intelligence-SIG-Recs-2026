@@ -1,0 +1,23 @@
+{
+  "n_listings": 9578,
+  "n_groups": 3000,
+  "mean_group_size": 3.1926666666666668,
+  "median_group_size": 2.0,
+  "max_group_size": 51,
+  "share_groups_size2": 0.6246666666666667,
+  "share_singletons": 0.0,
+  "unique_images": 9031,
+  "unique_phash": 8039,
+  "rows_with_duplicate_image": 903,
+  "images_in_multiple_groups": 3,
+  "phash_in_multiple_groups": 10,
+  "groups_with_single_phash": 0.08366666666666667,
+  "share_rows_exact_dup_title": 0.06013781582793903,
+  "share_rows_norm_dup_title": 0.09835038630194196,
+  "titles_in_multiple_groups": 8,
+  "share_allcaps": 0.18521612027563167,
+  "share_non_ascii": 0.0,
+  "share_short_titles": 0.04562539152223846,
+  "pos_pairs_same_phash": 0.11320754716981132,
+  "pos_pairs_far_phash": 0.7155297532656023
+}

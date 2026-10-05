@@ -1,0 +1,9 @@
+error category,count,why it fails,possible fix
+FN: neither modality matches (hard),565,both text and image differ - maybe even label noise,"more modalities/attributes, cluster-level reasoning, inspect label noise"
+"FP: text matches, images differ",398,generic or copied titles; seller photos differ,"down-weight generic title words, require image agreement when titles are generic"
+"FN: titles match, images differ (different photos of same product)",311,"viewpoint, packaging vs item, lifestyle photo","image fine-tuning with multi-view positives, rely more on text when the image is unreliable"
+FP: text AND image agree (near-identical variant / similar product),132,"same product family, different variant (colour/size/model)","variant-aware features: colour histogram, size/number extraction, fine-tuned embeddings with hard negatives"
+FP: fused model over-trusted weak cues,131,many individually weak signals added up,"calibrate scorer, raise threshold, add more negatives in training"
+"FN: image matches, titles differ (noisy / disjoint titles)",122,"other language, keyword spam, very short title","multilingual encoder, title cleaning, translation, trust image more for short titles"
+"FP: image matches, titles differ (visually similar product)",74,stock photo / similar item,require some text support; instance-level image embeddings
+FN: both modalities match but fused model rejected (threshold / calibration),28,fused score borderline,threshold per group size / local adaptive thresholds

@@ -1,0 +1,9 @@
+slice,type,n_pairs,error_rate
+all true matches,FN,9571,0.10719882979834917
+true matches with a very short title (<=2 words),FN,113,0.20353982300884957
+true matches with very different images (pHash Ham >= 24),FN,5721,0.16885159937073937
+true matches with near-identical images (pHash Ham <= 4),FN,2357,0.0
+true matches whose number tokens conflict,FN,2331,0.24624624624624625
+all true non-matches,FP,106474,0.006903093713019141
+non-matches whose number tokens conflict (variants),FP,39394,0.006549220693506625
+non-matches with high title word overlap (Jaccard>=0.6),FP,32,1.0
